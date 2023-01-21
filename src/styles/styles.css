@@ -1,0 +1,38 @@
+
+/* main logo */
+.main-logo {
+    width: 23%;
+}
+.navMenu{
+    background-color: rgb(209, 231, 231);
+    margin: 0px 3px;
+    color: rgb(70, 53, 33);
+}
+.navTab{
+    background-color: rgb(216, 215, 205);
+}
+/* file select  */
+.file-select{ 
+    border-color: rgba(4, 4, 109, 0.529);
+    border-style: dashed; 
+    padding: 84px 0px;
+    width: 56%;
+}
+.drop-section{
+    margin: 60px 0px !important;
+}
+.upload-image{
+    width: 46px;
+}
+.bg-nav {
+    background-color: #b0bcff;
+}
+.nav-link {
+    background: #e1e1e1;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 6px;
+}
+.nav-link:hover{
+    color: rgb(18, 18, 177);
+}
