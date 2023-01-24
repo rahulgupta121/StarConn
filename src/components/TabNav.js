@@ -1,8 +1,9 @@
 import React, {useState,useRef} from "react";
 import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
+import {Tabs, Row, Col} from "react-bootstrap";
 // import Docx from 'docx-pdf';
 import jsPDF from 'jspdf';
+import "./download.css"
 function TabNav(event) {
 
   // function convertToJPG() {
@@ -199,17 +200,22 @@ const [webp, setWebp] = useState(null);
                   <div class="drag-section text-center">
                     <div class="drop-message">
                       
-                       <input type="file" accept=".png" onChange={handleFileChange} />
+                       <input className="button-3" type="file" accept=".png" onChange={handleFileChange} />
                       <br />
                       <div style={{width:"100%"}}>
 
                       <img src={jpgImage} alt="JPG Image" className="img-fluid" />
                       </div>
                       <br />
-                      <button onClick={convertToJPG}>Convert to JPG</button>
+                      <Row>
+                      <Col>
+                      <button className="button-5" onClick={convertToJPG}>Convert to JPG</button>
+                      </Col>
+                      <Col>
+                      <button className="button-4" onClick={downloadJPG}>Download JPG</button>
+                      </Col>
                     
-                      <button onClick={downloadJPG}>Download JPG</button>
-                    
+                      </Row>
                     </div>
                     <div
                       id="image_previews"
@@ -243,12 +249,16 @@ const [webp, setWebp] = useState(null);
                       Drop your images here or <span>browse.</span>
                     </h4> */}
 
-                <input type="file" ref={fileInput} onChange={handleFileChange1} />
+                <input type="file" className="button-3" ref={fileInput} onChange={handleFileChange1} />
                       {webp && <img src={webp} alt="webp" className="w-100" />}
                       <br />
-                      <button onClick={handleDownload1} disabled={!webp}>
+                      <Row>
+                        <Col>
+                      <button className="button-4" onClick={handleDownload1} disabled={!webp}>
                         Download WebP
                       </button>
+                        </Col>
+                      </Row>
                   </div>
                   
                 </div>
@@ -278,12 +288,16 @@ const [webp, setWebp] = useState(null);
               <div class="row justify-content-center">
                 <div class="drag-section text-center">
                   <div class="drop-message">
-                  <input type="file" ref={fileInput3} onChange={handleFileChange3} accept="image/png" />
+                  <input type="file" className="button-3" ref={fileInput3} onChange={handleFileChange3} accept="image/png" />
       {gif && <img src={gif} alt="gif" />}
       <br />
-      <button onClick={handleDownload3} disabled={!gif}>
+      <Row>
+        <Col>
+      <button className="button-4" onClick={handleDownload3} disabled={!gif}>
         Download GIF
       </button>
+        </Col>
+      </Row>
                 </div></div>
               </div>
             </div>
@@ -295,11 +309,16 @@ const [webp, setWebp] = useState(null);
               <div class="row justify-content-center">
                 <div class="drag-section text-center">
                   <div class="drop-message">
-                  <input type="file" ref={fileInput4} onChange={handleFileChange4} accept="image/png" />
+                  <input type="file" className="button-3" ref={fileInput4} onChange={handleFileChange4} accept="image/png" />
       <br />
-      <button onClick={handleDownload4} disabled={!pdf}>
+      <Row>
+        <Col>
+        <button className="button-4" onClick={handleDownload4} disabled={!pdf}>
         Download PDF
       </button>
+        </Col>
+      </Row>
+      
                   </div>
                   
                 </div>
@@ -400,37 +419,7 @@ const [webp, setWebp] = useState(null);
             </div>
           </section>
         </Tab>
-        {/* <Tab eventKey="profile" title="Profile">
-        <section id="drop-section">
-
-<div class="file-select container my-5">
-  <div class="row justify-content-center">
-<div class="drag-section text-center">
-                            <div class="drop-message">
-                                <img src="" alt="Upload image" class="img-fluid upload-image" />
-                                <h4 class="file-upload-text my-3">Drop your images here or <span>browse.</span></h4>
-                            </div>
-															  <div id="image_previews" class="previews-container ml-4 mr-auto">
-																</div>
-														
-														<button type="button" class="btn btn-primary btn-primary-bold-modifier px-4 py-3 font-weight-bold">Select Image</button>
-                        </div>
-                        </div>
-</div>
-</section>  
-      </Tab>
-      <Tab eventKey="profile" title="Profile">
-        <h6>fghjkldfghjk</h6>
-      </Tab>
-      <Tab eventKey="profile" title="Profile">
-        <h6>fghjkldfghjk</h6>
-      </Tab>
-      <Tab eventKey="profile" title="Profile">
-        <h6>fghjkldfghjk</h6>
-      </Tab>
-      <Tab eventKey="profile" title="Profile">
-        <h6>fghjkldfghjk</h6>
-      </Tab> */}
+        
       </Tabs>
     </>
   );
